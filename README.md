@@ -39,7 +39,6 @@ SGD
 == 1x28x28 (Resize)
 -> 8x12x12 (Convolution(kernel=5, stride=2))
 -> _ (elu)
--> Dropout (ratio=0.5)
 -> 16x4x4 (Convolution(kernel=5, stride=2))
 -> _ (elu)
 == 256 (Flatten)
