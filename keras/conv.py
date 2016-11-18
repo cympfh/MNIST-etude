@@ -1,3 +1,4 @@
+import keras
 from keras.datasets import mnist
 from keras.layers import Activation, Convolution2D, Dense, Flatten, Reshape
 from keras.models import Sequential
@@ -19,5 +20,10 @@ model.add(Flatten())
 model.add(Dense(K))
 model.add(Activation("softmax"))
 
+
+board = keras.callbacks.TensorBoard(log_dir='.log', histogram_freq=1)
+
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=30, nb_epoch=10, validation_data=(x_test, y_test))
+model.fit(x_train, y_train, batch_size=30, nb_epoch=10,
+          callbacks=[board],
+          validation_data=(x_test, y_test))
