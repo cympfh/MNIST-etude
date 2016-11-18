@@ -14,6 +14,9 @@
     - Acc 91.66% / 10 epoch
 - [x] keras/conv
     - Acc 97.42% / 10 epoch
+- [x] keras/rnn
+    - Acc 93.66% / 10 epoch
+
 
 # Setup
 
@@ -42,6 +45,16 @@ SGD
 -> 16x4x4 (Convolution(kernel=5, stride=2))
 -> _ (elu)
 == 256 (Flatten)
+-> 10 (Linear)
+-> 10 (Softmax)
+```
+
+### rnn
+
+```
+28x28
+== 1x784 (Reshape)
+-> 20 (LSTM)
 -> 10 (Linear)
 -> 10 (Softmax)
 ```
