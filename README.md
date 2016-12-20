@@ -10,6 +10,8 @@
     - Acc 90.48% / 10 epoch
 - [x] chainer/conv
     - Acc 97.78% / 10 epoch
+- [x] chainer/vat
+    - Acc 93.3% / 10 epoch
 - [x] keras/linear
     - Acc 91.66% / 10 epoch
 - [x] keras/conv
@@ -24,9 +26,26 @@
 
 SGD
 
+# Dataset
+
+## full supervised
+
+- 60k items for training
+- 10k items for validation (=test)
+
+## semi supervised
+
+- 60k items for training
+    - 500 items labeled
+    - rest (59,500 items) are unlabeld
+- 10k items for validation (=test)
+
 ## Networks
 
 ### linear
+
+Supervised.
+All images be flatten to vectors.
 
 ```
 28x28 (raw Image)
@@ -36,6 +55,9 @@ SGD
 ```
 
 ### conv
+
+Supervised.
+A simple CNN.
 
 ```
 28x28
@@ -51,6 +73,9 @@ SGD
 
 ### rnn
 
+Supervised.
+All images be flatten to sequences.
+
 ```
 28x28
 == 1x784 (Reshape)
@@ -58,3 +83,10 @@ SGD
 -> 10 (Linear)
 -> 10 (Softmax)
 ```
+
+### VAT (= Convolution + Virtual Adversarial Training)
+
+Semi-supervised.
+The labeled items are learned with the simple CNN (previous).
+The all (labeled and unlabeld) are used in VAT.
+
