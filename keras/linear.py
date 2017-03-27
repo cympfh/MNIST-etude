@@ -1,5 +1,5 @@
 from keras.datasets import mnist
-from keras.layers import Activation, Dense, Flatten
+from keras.layers import Dense, Flatten
 from keras.models import Sequential
 from keras.utils import np_utils
 
@@ -13,8 +13,7 @@ y_test = np_utils.to_categorical(y_test, K)
 
 model = Sequential()
 model.add(Flatten(input_shape=(28, 28)))
-model.add(Dense(K))
-model.add(Activation("softmax"))
+model.add(Dense(K, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=30, nb_epoch=10, validation_data=(x_test, y_test))
+model.fit(x_train, y_train, batch_size=30, epochs=10, validation_data=(x_test, y_test))
