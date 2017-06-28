@@ -9,12 +9,6 @@
     [keras.utils [np_utils]])
 
 
-(defmacro let [var-pairs &rest body]
-  (setv var-names (list (map first  var-pairs))
-        var-vals  (list (map second var-pairs)))
-  `((fn [~@var-names] ~@body) ~@var-vals))
-
-
 (def M 10)
 
 ;; data
