@@ -2,23 +2,28 @@
 
 単に諸フレームワークに触れることを目的とします
 
-- [x] tensorflow/linear
-    - Acc 91%
-- [ ] tensorflow/conv
-    - 書いてるけど下のネットワークとは全然違うし精度でないので何か間違ってる
-- [x] chainer/linear
-    - Acc 90.48% / 10 epoch
-- [x] chainer/conv
-    - Acc 97.78% / 10 epoch
-- [x] chainer/vat
-    - Acc 93.3% / 10 epoch
-- [x] keras/linear
-    - Acc 91.66% / 10 epoch
-- [x] keras/conv
-    - Acc 97.42% / 10 epoch
-- [x] keras/rnn
-    - Acc 93.66% / 10 epoch
-
+- tensorflow/
+    - [x] linear
+        - Acc 91%
+    - [ ] conv
+        - 書いてるけど下のネットワークとは全然違うし精度でないので何か間違ってる
+- chainer/
+    - [x] linear
+        - Acc 90.48% / 10 epoch
+    - [x] conv
+        - Acc 97.78% / 10 epoch
+    - [x] vat
+        - Acc 93.3% / 10 epoch
+- keras/
+    - [x] linear
+        - Acc 91.66% / 10 epoch
+    - [x] conv
+        - Acc 97.42% / 10 epoch
+    - [x] rnn
+        - Acc 93.66% / 10 epoch
+- pytorch/
+    - [x] conv
+        - Acc 98.44% / 2 epoch
 
 # Setup
 
