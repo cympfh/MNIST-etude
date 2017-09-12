@@ -1,6 +1,10 @@
 # MNIST-etude
 
-単に諸フレームワークに触れることを目的とします
+This project is a collection of MNIST classification.
+
+More examples of variety frameworks and classification methods, rather than higher performance (accuracy).
+
+`(semisup)` stands for "semi-supervised learning."
 
 - tensorflow/
     - [x] linear
@@ -21,36 +25,27 @@
         - Acc 97.42% / 10 epoch
     - [x] rnn
         - Acc 93.66% / 10 epoch
+    - [x] Learning by Association `(semisup)`
+        - see [cympfh/learning-by-association-MNIST](https://github.com/cympfh/learning-by-association-MNIST)
 - pytorch/
+    - [x] linear
+        - Acc 91.68% / 10 epoch
     - [x] conv
-        - Acc 98.44% / 2 epoch
+        - Acc 97.33% / 10 epoch
+    - [ ] rnn
 
-# Setup
+# Rule
 
-## Optimizers
-
-SGD
-
-# Dataset
-
-## full supervised
-
-- 60k items for training
-- 10k items for validation (=test)
-
-## semi supervised
-
-- 60k items for training
-    - 500 items labeled
-    - rest (59,500 items) are unlabeld
-- 10k items for validation (=test)
+- Optimizers: `SGD`
+- Dataset: `MNIST`
+    - 60k items for training
+    - 10k items for testing
 
 ## Networks
 
-### linear
+Very simple architectures are adopted.
 
-Supervised.
-All images be flatten to vectors.
+### linear: has only 1 linear (or dense) layer
 
 ```
 28x28 (raw Image)
@@ -60,9 +55,6 @@ All images be flatten to vectors.
 ```
 
 ### conv
-
-Supervised.
-A simple CNN.
 
 ```
 28x28
@@ -77,9 +69,6 @@ A simple CNN.
 ```
 
 ### rnn
-
-Supervised.
-All images be flatten to sequences.
 
 ```
 28x28
