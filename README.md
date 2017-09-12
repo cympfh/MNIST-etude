@@ -2,6 +2,8 @@
 
 This project is a collection of MNIST classification.
 
+諸フレームワークに触れることを目的にします.
+
 More examples of variety frameworks and classification methods, rather than higher performance (accuracy).
 
 `(semisup)` stands for "semi-supervised learning."
@@ -16,8 +18,8 @@ More examples of variety frameworks and classification methods, rather than high
         - Acc 90.48% / 10 epoch
     - [x] conv
         - Acc 97.78% / 10 epoch
-    - [x] vat
-        - Acc 93.3% / 10 epoch
+    - [x] vat `(semisup)`
+        - Acc 93.3% / 10 epoch, 500 labels
 - keras/
     - [x] linear
         - Acc 91.66% / 10 epoch
@@ -26,6 +28,8 @@ More examples of variety frameworks and classification methods, rather than high
     - [x] rnn
         - Acc 93.66% / 10 epoch
     - [x] Learning by Association `(semisup)`
+        - Acc 96.00% / 100 labels
+        - Acc 90.30% / 10 labels
         - see [cympfh/learning-by-association-MNIST](https://github.com/cympfh/learning-by-association-MNIST)
 - pytorch/
     - [x] linear
