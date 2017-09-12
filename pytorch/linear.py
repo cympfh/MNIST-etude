@@ -24,14 +24,10 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 8, 5, stride=2)
-        self.conv2 = nn.Conv2d(8, 16, 5, stride=2)
-        self.lin = nn.Linear(256, 10)
+        self.lin = nn.Linear(28 * 28, 10)
 
     def forward(self, x):
-        x = F.elu(self.conv1(x))
-        x = F.elu(self.conv2(x))
-        x = x.view(-1, 256)
+        x = x.view(-1, 28 * 28)
         y = F.softmax(self.lin(x))
         return y
 

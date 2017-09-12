@@ -14,3 +14,6 @@ cuda80                    1.0                           0    soumith
 pytorch                   0.2.0           py36h53baedd_4cu80  [cuda80]  soumith
 ```
 
+## Run
+
+make.
