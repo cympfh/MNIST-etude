@@ -26,7 +26,7 @@ More examples of variety frameworks and classification methods, rather than high
     - [x] conv
         - Acc 97.42% / 10 epoch
     - [x] rnn
-        - Acc 93.66% / 10 epoch
+        - Acc 96.68% / 10 epoch
     - [x] Learning by Association `(semisup)`
         - Acc 96.00% / 100 labels
         - Acc 90.30% / 10 labels
@@ -36,7 +36,8 @@ More examples of variety frameworks and classification methods, rather than high
         - Acc 91.65% / 10 epoch
     - [x] conv
         - Acc 97.74% / 10 epoch
-    - [ ] rnn
+    - [x] rnn
+        - Acc 95.18% / 10 epoch
 
 # Rule
 
@@ -75,9 +76,8 @@ Very simple architectures are adopted.
 ### rnn
 
 ```
-28x28
-== 1x784 (Reshape)
--> 20 (LSTM)
+28x28 = (timestep, input)
+-> 20 (LSTM(hidden_dim=128))
 -> 10 (Linear)
 -> 10 (Softmax)
 ```
