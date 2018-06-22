@@ -33,9 +33,9 @@ More examples of variety frameworks and classification methods, rather than high
         - see [cympfh/learning-by-association-MNIST](https://github.com/cympfh/learning-by-association-MNIST)
 - pytorch/
     - [x] linear
-        - Acc 91.68% / 10 epoch
+        - Acc 91.65% / 10 epoch
     - [x] conv
-        - Acc 97.33% / 10 epoch
+        - Acc 97.74% / 10 epoch
     - [ ] rnn
 
 # Rule

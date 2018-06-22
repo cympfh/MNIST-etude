@@ -33,7 +33,7 @@ class Net(nn.Module):
         x = F.elu(self.conv1(x))
         x = F.elu(self.conv2(x))
         x = x.view(-1, 256)
-        y = F.softmax(self.lin(x), dim=-1)
+        y = self.lin(x)
         return y
 
 

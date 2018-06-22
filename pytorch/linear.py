@@ -29,7 +29,7 @@ class Net(nn.Module):
 
     def forward(self, x):
         x = x.view(-1, 28 * 28)
-        y = F.log_softmax(self.lin(x), dim=-1)
+        y = self.lin(x)
         return y
 
 
