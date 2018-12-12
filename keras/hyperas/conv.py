@@ -36,18 +36,18 @@ def create_model(x_train, y_train):
     model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
     result = model.fit(x_train, y_train,
-                       batch_size={{choice([32, 64])}},
+                       batch_size=30,
                        epochs=10,
                        validation_split=0.1)
-    loss = -numpy.amax(result.history['val_acc'])
-    return {'loss': -loss, 'status': STATUS_OK, 'model': model}
+    losses = result.history['val_loss']
+    return {'loss': numpy.amin(losses), 'status': STATUS_OK, 'model': model}
 
 
 if __name__ == '__main__':
     best_run, best_model = optim.minimize(model=create_model,
                                           data=data,
                                           algo=tpe.suggest,
-                                          max_evals=5,
+                                          max_evals=30,
                                           trials=Trials())
     _, _, X_test, Y_test = data()
     print("Evalutation of best performing model:")
