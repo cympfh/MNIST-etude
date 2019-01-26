@@ -11,8 +11,8 @@ More examples of variety frameworks and classification methods, rather than high
 - tensorflow/
     - [x] linear
         - Acc 91%
-    - [ ] conv
-        - 書いてるけど下のネットワークとは全然違うし精度でないので何か間違ってる
+    - [x] conv
+        - Acc 95%
 - chainer/
     - [x] linear
         - Acc 90.48% / 10 epoch

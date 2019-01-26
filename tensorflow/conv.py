@@ -1,6 +1,5 @@
 #
-# only Acc=13% on CPU
-#  (should works on GPU!!)
+# Acc=95%
 #
 import numpy
 import tensorflow as tf
@@ -46,20 +45,20 @@ with tf.Session() as sess:
     with tf.device('/gpu:0'):
 
         with tf.name_scope('conv1'):
-            w = weight_variable([5, 5, 1, 64])
-            b = weight_variable([64])
+            w = weight_variable([5, 5, 1, 8])
+            b = weight_variable([8])
             h = tf.nn.relu(conv2d(x_image, w) + b)
             h = max_pool_2x2(h)
 
-        h = batch_normalization([14, 14, 64], h)
+        h = batch_normalization([14, 14, 8], h)
 
         with tf.name_scope('conv2'):
-            w = weight_variable([5, 5, 64, 1024])
-            b = weight_variable([1024])
+            w = weight_variable([5, 5, 8, 16])
+            b = weight_variable([16])
             h = tf.nn.relu(conv2d(h, w) + b)
             h = max_pool_2x2(h)
 
-        k = 1024 * 7 * 7
+        k = 16 * 7 * 7
         h = tf.reshape(h, [-1, k])
 
         with tf.name_scope('out_linear'):
@@ -69,7 +68,7 @@ with tf.Session() as sess:
 
     y = h
 
-    e = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(y, y_))  # loss
+    e = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=y, labels=y_))  # loss
 
     acc = tf.reduce_mean(tf.cast(
         tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1)),
