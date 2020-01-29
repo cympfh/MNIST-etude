@@ -1,0 +1,5 @@
+pip
+thinc==8.0.0a0
+mypy==0.761
+ml_datasets
+cowsay
